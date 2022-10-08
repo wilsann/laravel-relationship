@@ -16,6 +16,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- Menampilkan post dari nama user --}}
                             @foreach ($posts as $post)
                                 <tr>
                                     <td><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></td>

@@ -12,7 +12,8 @@ class Tag extends Model
 
     public function getRouteKeyName()
     {
-     return 'slug';   
+        //ganti slug dari id ke nama slug
+        return 'slug';
     }
 
     public function posts()

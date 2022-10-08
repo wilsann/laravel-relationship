@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Tampilan post dari user tertentu
 Route::get('{user}/posts', function (User $user) {
     $posts = $user->posts;
     return view('users.show', [
@@ -29,10 +30,12 @@ Route::get('{user}/posts', function (User $user) {
     ]);
 } );
 
+//Tampilan halaman post dari id
 Route::get('posts/{post}', function (Post $post) {
     return view('posts/show', compact('post'));
 });
 
+//Tampilan post dari tag tertentu
 Route::get('tags/{tag}/posts', function (Tag $tag) {
     $posts = $tag->posts;
     return view('tags.show', ['tag' => $tag, 'posts' => $posts]);
